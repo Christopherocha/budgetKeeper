@@ -1,19 +1,13 @@
-//dependencies
-// var express = require("express");
-// var methodOverride = require("method-override");
-// var bodyParser = require("body-parser");
-// var logger = require("morgan");
-// var mongoose = require("mongoose");
-import "express";
-import * as methodOverride from "method-override";
-import * as bodyParser from "body-parser";
-import * as logger from "morgan";
-import "mongoose";
+var express = require("express");
+var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
+var logger = require("morgan");
+var mongoose = require("mongoose");
 
 mongoose.Promise = Promise;
 
 // initialize express
-var app = express();
+const app = express();
 
 app.set('port', process.env.PORT || 8080);
 
@@ -32,17 +26,17 @@ app.use("/", routes);
 // var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
 //                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
  
-//var mongodbUri = 'mongodb://lernt:burnunit@ds133814.mlab.com:33814/lernt';
+//var mongodbUri = '';
  
 // mongoose.connect(mongodbUri, options);
 // var db = mongoose.connection;             
  
-db.on('error', console.error.bind(console, 'connection error:'));  
+// db.on('error', console.error.bind(console, 'connection error:'));  
  
-db.once('open', function() {
-  // Wait for the database connection to establish, then start the app.
-  console.log('Connected to '+ mongodbUri);                         
-});
+// db.once('open', function() {
+//   // Wait for the database connection to establish, then start the app.
+//   console.log('Connected to '+ mongodbUri);                         
+// });
 
 server.listen(app.get('port'), function() {
   console.log("App running!");

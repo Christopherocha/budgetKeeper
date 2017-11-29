@@ -20,11 +20,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
-var routes = require("./controllers/routes.js")
-app.use("/", routes);
-
-// var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-//                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+// var routes = require("./controllers/routes.js")
+// app.use("/", routes);     
  
 //var mongodbUri = '';
  
@@ -38,6 +35,6 @@ app.use("/", routes);
 //   console.log('Connected to '+ mongodbUri);                         
 // });
 
-server.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
   console.log("App running!");
 });
